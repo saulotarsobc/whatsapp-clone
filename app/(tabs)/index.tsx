@@ -1,31 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { ScrollView } from "react-native";
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import { chats } from "@/mock";
+import { COLORS } from "@/constants/Colors";
+import { ChatListItem } from "@/components/ChatListItem";
 
-export default function TabOneScreen() {
+export default function index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <ScrollView style={{ backgroundColor: COLORS.light.mainBgColor }}>
+      {chats.map((chat) => (
+        <ChatListItem key={"chat-" + chat.id} chat={chat} />
+      ))}
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
