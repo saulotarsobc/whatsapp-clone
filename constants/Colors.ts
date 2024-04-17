@@ -1,23 +1,26 @@
 // https://www.color-hex.com/color-palette/110833
 // https://www.color-hex.com/color-palette/113854
 // https://www.color-hex.com/color
+// https://coolors.co/palettes/whatsapp
 
-const whastsappColor = "#128c7e";
-const whastsappColorDark = "#0E2E2D";
+const greenlight = "#128c7e";
+const greenDark = "#073b4c";
 
 export const COLORS = {
   light: {
     text: "#111",
-    background: "#fff",
-    headerBgColor: whastsappColor,
-    mainBgColor: "#fff",
-    footerBgColor: "#fff",
+    background: "#ffffff",
+    headerBgColor: greenlight,
+    mainBgColor: "#ffffff",
+    footerBgColor: "#ffffff",
+    footerText: "#111",
   },
   dark: {
-    text: "#fff",
+    text: "#ffffff",
     background: "#111",
-    headerBgColor: whastsappColorDark,
+    headerBgColor: greenDark,
     mainBgColor: "#09201F",
-    footerBgColor: whastsappColorDark,
+    footerBgColor: greenDark,
+    footerText: "#fff",
   },
 };

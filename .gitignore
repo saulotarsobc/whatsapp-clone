@@ -7,7 +7,6 @@ node_modules/
 .expo/
 dist/
 web-build/
-builder/
 
 # Native
 *.orig.*
@@ -40,3 +39,7 @@ yarn-error.*
 
 expo-env.d.ts
 # @end expo-cli
+
+/builder/
+/android/
+/ios/

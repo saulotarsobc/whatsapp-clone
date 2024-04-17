@@ -1,97 +1,134 @@
-import React from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Tabs } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import { COLORS } from "@/constants/Colors";
-import { View } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Feather, MaterialIcons, Zocial } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
+import React from "react";
+import { Text, View } from "react-native";
+import * as NavigationBar from "expo-navigation-bar";
 
-export default function TabLayout() {
+export default () => {
+  NavigationBar.setBackgroundColorAsync(COLORS.light.footerBgColor);
+  NavigationBar.setButtonStyleAsync("dark");
+
   return (
-    <>
-      <StatusBar backgroundColor={COLORS.light.headerBgColor} style="light" />
-      <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
-        <Tabs.Screen
-          name="index"
-          options={{
-            title: "Home",
-            tabBarIcon: ({ focused }) => (
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: false,
+        headerShown: false,
+        tabBarStyle: {
+          height: 80,
+          backgroundColor: COLORS.light.footerBgColor,
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="chats"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View className="h-16 flex justify-center items-center">
               <View
-                className={`${
-                  focused ? "bg-slate-300" : null
-                } w-3/4 h-8 flex justify-center items-center rounded-full`}
+                className="h-10 w-20 flex justify-center items-center rounded-full"
+                style={{
+                  backgroundColor: focused ? "rgba(0, 0, 0, 0.195)" : "",
+                }}
               >
                 <AntDesign
                   name="message1"
-                  size={24}
+                  size={26}
                   color={COLORS.light.text}
                 />
               </View>
-            ),
-            tabBarLabel: "Conversas",
-          }}
-        />
+              <Text
+                className={`mt-1 ${focused && "font-bold"}`}
+                style={{ color: COLORS.light.text }}
+              >
+                Conversas
+              </Text>
+            </View>
+          ),
+        }}
+      />
 
-        <Tabs.Screen
-          name="calls"
-          options={{
-            title: "Home",
-            tabBarIcon: ({ focused }) => (
+      <Tabs.Screen
+        name="updates"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View className="h-16 flex justify-center items-center">
               <View
-                className={`${
-                  focused ? "bg-slate-300" : null
-                } w-3/4 h-8 flex justify-center items-center rounded-full`}
+                className="h-10 w-20 flex justify-center items-center rounded-full"
+                style={{
+                  backgroundColor: focused ? "rgba(0, 0, 0, 0.195)" : "",
+                }}
               >
-                <AntDesign
-                  name="message1"
-                  size={24}
-                  color={COLORS.light.text}
+                <Zocial name="statusnet" size={26} color={COLORS.light.text} />
+              </View>
+              <Text
+                className={`mt-1 ${focused && "font-bold"}`}
+                style={{ color: COLORS.light.text }}
+              >
+                Atualizações
+              </Text>
+            </View>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="communities"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View className="h-16 flex justify-center items-center">
+              <View
+                className="h-10 w-20 flex justify-center items-center rounded-full"
+                style={{
+                  backgroundColor: focused ? "rgba(0, 0, 0, 0.195)" : "",
+                }}
+              >
+                <Feather
+                  name="users"
+                  size={26}
+                  color={COLORS.light.footerText}
                 />
               </View>
-            ),
-            tabBarLabel: "Conversas",
-          }}
-        />
-      </Tabs>
-    </>
+
+              <Text
+                className={`mt-1 ${focused && "font-bold"}`}
+                style={{ color: COLORS.light.text }}
+              >
+                Comunidades
+              </Text>
+            </View>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="calls"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View className="h-16 flex justify-center items-center">
+              <View
+                className="h-10 w-20 flex justify-center items-center rounded-full"
+                style={{
+                  backgroundColor: focused ? "rgba(0, 0, 0, 0.195)" : "",
+                }}
+              >
+                <MaterialIcons
+                  name="call"
+                  size={26}
+                  color={COLORS.light.footerText}
+                />
+              </View>
+
+              <Text
+                className={`mt-1 ${focused && "font-bold"}`}
+                style={{ color: COLORS.light.footerText }}
+              >
+                Ligações
+              </Text>
+            </View>
+          ),
+        }}
+      />
+    </Tabs>
   );
-}
-
-// import { COLORS } from "@/constants/Colors";
-// import { Stack } from "expo-router";
-// import { StatusBar } from "expo-status-bar";
-
-// export default function Layout() {
-//   return (
-//     <>
-//       <StatusBar backgroundColor={COLORS.light.headerBgColor} style="light" />
-//       <Stack
-//         screenOptions={{
-//           headerStyle: {
-//             backgroundColor: COLORS.light.headerBgColor,
-//           },
-//           headerTintColor: "#fff",
-//           headerTitleStyle: {
-//             fontWeight: "400",
-//           },
-//         }}
-//       >
-//         <Stack.Screen
-//           name="index"
-//           options={{
-//             title: "WhatsApp",
-//             statusBarColor: COLORS.light.headerBgColor,
-//           }}
-//         />
-
-//         <Stack.Screen
-//           name="chat/[id]"
-//           options={{
-//             statusBarColor: COLORS.light.headerBgColor,
-//             title: "",
-//           }}
-//         />
-//       </Stack>
-//     </>
-//   );
-// }
+};

@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 
-export function Updates() {
+export default function Updates() {
   return (
     <View>
       <Text>Updates</Text>

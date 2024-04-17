@@ -1,7 +1,7 @@
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { router } from "expo-router";
 import { COLORS } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
-import { Image, Text, TouchableOpacity, View } from "react-native";
 
 export function ChatListItem({ chat }: { chat: any }) {
   return (
@@ -10,30 +10,33 @@ export function ChatListItem({ chat }: { chat: any }) {
         id="avatar"
         className="h-14 aspect-square rounded-full overflow-hidden"
         onPress={() => {
-          console.log("avatar", chat.id);
+          console.log("abrir avatar");
         }}
       >
         <Image
           className="h-full w-full"
-          source={require("../assets/images/avatar.png")}
+          source={
+            chat?.to.photo
+              ? { uri: chat?.to.photo }
+              : require("../assets/images/avatar.png")
+          }
         />
       </TouchableOpacity>
 
       <TouchableOpacity
         className="w-5/6 pl-3"
         onPress={() => {
-          console.log("chat", chat.id);
-          router.navigate(`/chat/id=${chat.id}`);
+          router.navigate(`/chat/${chat?.id}?data=${JSON.stringify(chat)}`);
         }}
       >
         {/* name and time */}
         <View className="flex flex-row items-center justify-between w-full">
           <Text className="text-lg" style={{ color: COLORS.light.text }}>
-            {chat.to.name}
+            {chat?.to.name}
           </Text>
 
           <Text className="text-xs" style={{ color: COLORS.light.text }}>
-            {/* {chat.msg.time} */}
+            {/* {chat?.msg.time} */}
             00:00
           </Text>
         </View>
@@ -51,7 +54,7 @@ export function ChatListItem({ chat }: { chat: any }) {
               ellipsizeMode="tail"
               style={{ color: COLORS.light.text }}
             >
-              {chat.msg.body}
+              {chat?.msg.body}
             </Text>
           </View>
         </View>

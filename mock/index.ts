@@ -1,8 +1,12 @@
 export const chats = [
   {
-    id: 11,
-    to: { id: 345, name: "Ed Sheeran" },
     status: 2,
+    id: "11",
+    to: {
+      id: 345,
+      name: "Ed Sheeran",
+      photo: "https://picsum.photos/id/1/200/200",
+    },
     msg: {
       body: "Oi Ed, estou ansioso para o seu próximo álbum!",
       id: 123,
@@ -10,9 +14,13 @@ export const chats = [
     },
   },
   {
-    id: 12,
-    to: { id: 678, name: "Adele" },
     status: 3,
+    id: "12",
+    to: {
+      id: 678,
+      name: "Adele",
+      photo: "https://picsum.photos/id/2/200/200",
+    },
     msg: {
       body: "Adele, quando será o seu próximo concerto?",
       id: 456,
@@ -20,9 +28,13 @@ export const chats = [
     },
   },
   {
-    id: 13,
-    to: { id: 901, name: "Drake" },
     status: 0,
+    id: "13",
+    to: {
+      id: 901,
+      name: "Drake",
+      photo: "https://picsum.photos/id/3/200/200",
+    },
     msg: {
       body: "Oi Drake, você gostaria de colaborar em uma música?",
       id: 789,
@@ -30,9 +42,13 @@ export const chats = [
     },
   },
   {
-    id: 14,
-    to: { id: 234, name: "Beyoncé" },
     status: 1,
+    id: "14",
+    to: {
+      id: 234,
+      name: "Beyoncé",
+      photo: "https://picsum.photos/id/4/200/200",
+    },
     msg: {
       body: "Beyoncé, você pode fazer um show na minha cidade?",
       id: 567,
@@ -40,9 +56,13 @@ export const chats = [
     },
   },
   {
-    id: 15,
-    to: { id: 567, name: "Kanye West" },
     status: 2,
+    id: "15",
+    to: {
+      id: 567,
+      name: "Kanye West",
+      photo: "https://picsum.photos/id/5/200/200",
+    },
     msg: {
       body: "Olá Kanye, gostaria de discutir uma colaboração criativa.",
       id: 890,
@@ -50,9 +70,13 @@ export const chats = [
     },
   },
   {
-    id: 1,
-    to: { id: 123, name: "Alice" },
     status: 0,
+    id: "1",
+    to: {
+      id: 123,
+      name: "Alice",
+      photo: "https://picsum.photos/id/6/200/200",
+    },
     msg: {
       body: "Olá Alice, como você está?",
       id: 987,
@@ -60,9 +84,13 @@ export const chats = [
     },
   },
   {
-    id: 2,
-    to: { id: 456, name: "Bob" },
     status: 1,
+    id: "2",
+    to: {
+      id: 456,
+      name: "Bob",
+      photo: "https://picsum.photos/id/7/200/200",
+    },
     msg: {
       body: "Oi Bob, podemos nos encontrar amanhã?",
       id: 654,
@@ -70,9 +98,13 @@ export const chats = [
     },
   },
   {
-    id: 3,
-    to: { id: 789, name: "Carol" },
     status: 2,
+    id: "3",
+    to: {
+      id: 789,
+      name: "Carol",
+      photo: "https://picsum.photos/id/8/200/200",
+    },
     msg: {
       body: "Carol, você viu o e-mail que enviei?",
       id: 321,
@@ -80,9 +112,13 @@ export const chats = [
     },
   },
   {
-    id: 4,
-    to: { id: 234, name: "David" },
     status: 3,
+    id: "4",
+    to: {
+      id: 234,
+      name: "David",
+      photo: "https://picsum.photos/id/9/200/200",
+    },
     msg: {
       body: "David, precisamos discutir o projeto urgentemente.",
       id: 987,
@@ -90,9 +126,13 @@ export const chats = [
     },
   },
   {
-    id: 5,
-    to: { id: 567, name: "Emma" },
     status: 0,
+    id: "5",
+    to: {
+      id: 567,
+      name: "Emma",
+      photo: "https://picsum.photos/id/10/200/200",
+    },
     msg: {
       body: "Oi Emma, você tem um minuto para conversar?",
       id: 654,
@@ -100,9 +140,13 @@ export const chats = [
     },
   },
   {
-    id: 6,
-    to: { id: 890, name: "Frank" },
     status: 1,
+    id: "6",
+    to: {
+      id: 890,
+      name: "Frank",
+      photo: "https://picsum.photos/id/11/200/200",
+    },
     msg: {
       body: "Frank, preciso da sua ajuda com um problema técnico.",
       id: 321,
@@ -110,9 +154,13 @@ export const chats = [
     },
   },
   {
-    id: 7,
-    to: { id: 123, name: "Alice" },
     status: 2,
+    id: "7",
+    to: {
+      id: 123,
+      name: "Alice",
+      photo: "https://picsum.photos/id/12/200/200",
+    },
     msg: {
       body: "Alice, podemos adiar a reunião para amanhã?",
       id: 987,
@@ -120,9 +168,13 @@ export const chats = [
     },
   },
   {
-    id: 8,
-    to: { id: 456, name: "Bob" },
     status: 3,
+    id: "8",
+    to: {
+      id: 456,
+      name: "Bob",
+      photo: "https://picsum.photos/id/13/200/200",
+    },
     msg: {
       body: "Bob, por favor, confirme sua disponibilidade para o evento.",
       id: 654,
@@ -130,9 +182,13 @@ export const chats = [
     },
   },
   {
-    id: 9,
-    to: { id: 789, name: "Carol" },
     status: 0,
+    id: "9",
+    to: {
+      id: 789,
+      name: "Carol",
+      photo: "https://picsum.photos/id/14/200/200",
+    },
     msg: {
       body: "Oi Carol, como foi o seu fim de semana?",
       id: 321,
@@ -140,9 +196,13 @@ export const chats = [
     },
   },
   {
-    id: 10,
-    to: { id: 234, name: "David" },
     status: 1,
+    id: "10",
+    to: {
+      id: 234,
+      name: "David",
+      photo: "https://picsum.photos/id/15/200/200",
+    },
     msg: {
       body: "David, poderíamos discutir a proposta na próxima semana?",
       id: 987,

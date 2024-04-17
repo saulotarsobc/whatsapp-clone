@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#128c7e"
+      "backgroundColor": "#128c7e",
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,7 +19,8 @@
       "supportsTablet": true,
       "runtimeVersion": {
         "policy": "appVersion"
-      }
+      },
+      "bundleIdentifier": "com.saulotarsobc.whatsapp"
     },
     "android": {
       "adaptiveIcon": {
