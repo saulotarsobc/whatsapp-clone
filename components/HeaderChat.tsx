@@ -102,38 +102,53 @@ export default function HeaderChat({ chat }: { chat: any }) {
       >
         <TouchableOpacity
           style={{
-            backgroundColor: "#fff3",
             height: 30,
           }}
           onPress={() => {
             console.log("chamada de video", "chat");
           }}
         >
-          <Ionicons name="videocam" size={24} color="#333" />
+          <Ionicons
+            name="videocam"
+            size={24}
+            style={{
+              color: COLORS.light.text,
+            }}
+          />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{
-            backgroundColor: "#fff3",
             height: 30,
           }}
           onPress={() => {
             console.log("chamada de voz chat");
           }}
         >
-          <MaterialIcons name="call" size={24} color="#333" />
+          <MaterialIcons
+            name="call"
+            size={24}
+            style={{
+              color: COLORS.light.text,
+            }}
+          />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{
-            backgroundColor: "#fff3",
             height: 30,
           }}
           onPress={() => {
             console.log("menu-popup no chat");
           }}
         >
-          <Feather name="more-vertical" size={24} color="#333" />
+          <Feather
+            name="more-vertical"
+            size={24}
+            style={{
+              color: COLORS.light.text,
+            }}
+          />
         </TouchableOpacity>
       </View>
     </View>
