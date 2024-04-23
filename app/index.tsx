@@ -6,7 +6,7 @@ import { View } from "react-native";
 
 export default () => {
   useFocusEffect(() => {
-    router.replace("/chat/1");
+    router.replace("/chat");
   });
 
   return (
