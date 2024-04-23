@@ -3,27 +3,67 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { COLORS } from "@/constants/Colors";
 import { Feather, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { SPACE, WINDOW_W } from "@/constants/Sizes";
 
 export default function HeaderChat({ chat }: { chat: any }) {
   return (
     <View
       id="header"
-      className="w-full h-16 px-4 flex flex-row justify-between items-center"
-      style={{ backgroundColor: COLORS.light.headerBgColor }}
+      style={{
+        backgroundColor: COLORS.light.headerBgColor,
+        width: WINDOW_W,
+        paddingHorizontal: SPACE * 2,
+        height: 70,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignContent: "center",
+      }}
     >
-      <View className="flex flex-row gap-1 justify-center items-center">
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          // backgroundColor: "#444",
+          gap: 5,
+        }}
+      >
         <TouchableOpacity
-          id="BachNameAndPhoto"
-          className="flex flex-row justify-center items-center gap-1"
+          id="BackNameAndPhoto"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 3,
+          }}
           onPress={() => {
             router.back();
           }}
         >
-          <Ionicons name="arrow-back-sharp" size={24} color="#fff" />
+          <Ionicons
+            name="arrow-back-sharp"
+            size={24}
+            style={{
+              color: COLORS.light.text,
+            }}
+          />
 
-          <View className="h-10 aspect-square rounded-full overflow-hidden">
+          <View
+            style={{
+              height: 50,
+              aspectRatio: "1/1",
+              borderRadius: 1000,
+              overflow: "hidden",
+            }}
+          >
             <Image
-              className="h-full w-full"
+              style={{
+                height: 50,
+                aspectRatio: "1/1",
+              }}
               source={
                 chat.to?.photo
                   ? { uri: chat.to.photo }
@@ -38,39 +78,61 @@ export default function HeaderChat({ chat }: { chat: any }) {
             console.log("mais informações sobre o perfil", chat.id);
           }}
         >
-          <Text className="text-white text-xl font-semibold">
+          <Text
+            style={{
+              color: COLORS.light.text,
+              fontWeight: "bold",
+            }}
+          >
             {chat.to?.name && chat.to?.name}
           </Text>
-          <Text className="text-white text-xs">Visto agurinha oh!</Text>
+          <Text>Visto agurinha oh!</Text>
         </TouchableOpacity>
       </View>
 
-      <View id="icons" className="flex flex-row gap-4">
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 15,
+        }}
+      >
         <TouchableOpacity
-          className="h-8 w-8 items-center justify-center"
+          style={{
+            backgroundColor: "#fff3",
+            height: 30,
+          }}
           onPress={() => {
             console.log("chamada de video", "chat");
           }}
         >
-          <Ionicons name="videocam" size={24} color="#fff" />
+          <Ionicons name="videocam" size={24} color="#333" />
         </TouchableOpacity>
 
         <TouchableOpacity
-          className="h-8 w-8 items-center justify-center"
+          style={{
+            backgroundColor: "#fff3",
+            height: 30,
+          }}
           onPress={() => {
             console.log("chamada de voz chat");
           }}
         >
-          <MaterialIcons name="call" size={24} color="#fff" />
+          <MaterialIcons name="call" size={24} color="#333" />
         </TouchableOpacity>
 
         <TouchableOpacity
-          className="h-8 w-8 items-center justify-center"
+          style={{
+            backgroundColor: "#fff3",
+            height: 30,
+          }}
           onPress={() => {
             console.log("menu-popup no chat");
           }}
         >
-          <Feather name="more-vertical" size={24} color="#fff" />
+          <Feather name="more-vertical" size={24} color="#333" />
         </TouchableOpacity>
       </View>
     </View>

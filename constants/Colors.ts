@@ -7,9 +7,8 @@ const black2 = "#0f191f";
 
 const white = "#ffffff";
 
-const turquese1 = "#009ae1";
-
 export const COLORS = {
+  turquese1: "#009ae1",
   light: {
     text: black2,
     background: white,

@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 export default function Calls() {
   return (
     <View>
-      <Text>Calls</Text>
+      <Text style={{ padding: 20 }}>Calls</Text>
     </View>
   );
 }

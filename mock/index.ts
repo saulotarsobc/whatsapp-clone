@@ -33,7 +33,7 @@ export const chats = [
     to: {
       id: 901,
       name: "Drake",
-      photo: "https://picsum.photos/id/3/200/200",
+      photo: "",
     },
     msg: {
       body: "Oi Drake, você gostaria de colaborar em uma música?",

@@ -8,9 +8,9 @@ export default function index() {
   return (
     <>
       <ScrollView style={{ backgroundColor: COLORS.light.mainBgColor }}>
-        {/* {chats.map((chat) => (
+        {chats.map((chat) => (
           <ChatListItem key={"chat-" + chat.id} chat={chat} />
-        ))} */}
+        ))}
       </ScrollView>
     </>
   );

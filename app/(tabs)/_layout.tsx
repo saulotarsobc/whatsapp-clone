@@ -1,5 +1,10 @@
 import { COLORS } from "@/constants/Colors";
-import { AntDesign, Feather, MaterialIcons, Zocial } from "@expo/vector-icons";
+import {
+  AntDesign,
+  Feather,
+  Fontisto,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
@@ -16,8 +21,18 @@ export default () => {
       <StatusBar backgroundColor={COLORS.light.headerBgColor} style="dark" />
       <Tabs
         screenOptions={{
+          // HEADER
+          headerTitleAlign: "left",
+          headerStyle: {
+            borderBottomColor: "#e0e0e0",
+            borderBottomWidth: 0.4,
+            height: 70,
+            backgroundColor: COLORS.light.headerBgColor,
+          },
+
+          // TAB
           tabBarStyle: {
-            height: 60,
+            height: 73,
             backgroundColor: COLORS.light.footerBgColor,
           },
         }}
@@ -28,14 +43,9 @@ export default () => {
             // HEADER
             headerTitle: "WhatsApp",
             title: "Conversas",
-            headerTitleAlign: "left",
             headerTitleStyle: {
-              fontSize: 26,
+              fontSize: 24,
               color: COLORS.light.whatassAppOnHeader,
-            },
-            headerStyle: {
-              borderBottomColor: "#e0e0e0",
-              borderBottomWidth: 0.4,
             },
             headerRight: () => <ChatsHeaderIcons />,
 
@@ -76,14 +86,162 @@ export default () => {
                     }}
                   />
                 </View>
-                {/* <Text
+              </View>
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="updates"
+          options={{
+            // HEADER
+            title: "Atualizações",
+            headerTitle: ({ children }) => (
+              <Text style={{ fontSize: 18 }}>{children}</Text>
+            ),
+            headerRight: () => <Text style={{ paddingRight: 30 }}>ICONS</Text>,
+
+            // TAB
+            tabBarLabelPosition: "below-icon",
+            tabBarLabel: ({ focused, children }) => (
+              <Text
+                style={{
+                  color: focused
+                    ? COLORS.light.tabBarActiveTintColor
+                    : COLORS.light.tabBarInactiveTintColor,
+                  fontWeight: focused ? "900" : "400",
+                }}
+              >
+                {children}
+              </Text>
+            ),
+            tabBarIcon: ({ focused, size }) => (
+              <View>
+                <View
                   style={{
-                    color: COLORS.light.text,
-                    fontWeight: focused ? "600" : "normal",
+                    backgroundColor: focused ? COLORS.light.tabBarFocused : "",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: 36,
+                    borderRadius: 36,
+                    width: 85,
                   }}
                 >
-                  Conversas
-                </Text> */}
+                  <MaterialCommunityIcons
+                    name="chat-processing-outline"
+                    size={size}
+                    style={{
+                      color: focused
+                        ? COLORS.light.tabBarIconFocused
+                        : COLORS.light.tabBarIconNoFocused,
+                    }}
+                  />
+                </View>
+              </View>
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="communities"
+          options={{
+            // HEADER
+            title: "Comunidades",
+            headerTitle: ({ children }) => (
+              <Text style={{ fontSize: 18 }}>{children}</Text>
+            ),
+            headerRight: () => <Text style={{ paddingRight: 30 }}>ICONS</Text>,
+
+            // TAB
+            tabBarLabelPosition: "below-icon",
+            tabBarLabel: ({ focused, children }) => (
+              <Text
+                style={{
+                  color: focused
+                    ? COLORS.light.tabBarActiveTintColor
+                    : COLORS.light.tabBarInactiveTintColor,
+                  fontWeight: focused ? "900" : "400",
+                }}
+              >
+                {children}
+              </Text>
+            ),
+            tabBarIcon: ({ focused, size }) => (
+              <View>
+                <View
+                  style={{
+                    backgroundColor: focused ? COLORS.light.tabBarFocused : "",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: 36,
+                    borderRadius: 36,
+                    width: 85,
+                  }}
+                >
+                  <Fontisto
+                    name="persons"
+                    size={size}
+                    style={{
+                      color: focused
+                        ? COLORS.light.tabBarIconFocused
+                        : COLORS.light.tabBarIconNoFocused,
+                    }}
+                  />
+                </View>
+              </View>
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="calls"
+          options={{
+            // HEADER
+            title: "Ligações",
+            headerTitle: ({ children }) => (
+              <Text style={{ fontSize: 18 }}>{children}</Text>
+            ),
+            headerRight: () => <Text style={{ paddingRight: 30 }}>ICONS</Text>,
+
+            // TAB
+            tabBarLabelPosition: "below-icon",
+            tabBarLabel: ({ focused, children }) => (
+              <Text
+                style={{
+                  color: focused
+                    ? COLORS.light.tabBarActiveTintColor
+                    : COLORS.light.tabBarInactiveTintColor,
+                  fontWeight: focused ? "900" : "400",
+                }}
+              >
+                {children}
+              </Text>
+            ),
+            tabBarIcon: ({ focused, size }) => (
+              <View>
+                <View
+                  style={{
+                    backgroundColor: focused ? COLORS.light.tabBarFocused : "",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: 36,
+                    borderRadius: 36,
+                    width: 85,
+                  }}
+                >
+                  <Feather
+                    name="phone"
+                    size={size}
+                    style={{
+                      color: focused
+                        ? COLORS.light.tabBarIconFocused
+                        : COLORS.light.tabBarIconNoFocused,
+                    }}
+                  />
+                </View>
               </View>
             ),
           }}

@@ -2,18 +2,35 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
 import { COLORS } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import { SPACE, WINDOW_W } from "@/constants/Sizes";
 
 export function ChatListItem({ chat }: { chat: any }) {
   return (
-    <View id="h-20 w-full px-3 flex flex-row items-center">
+    <View
+      style={{
+        height: 70,
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: SPACE * 2,
+        width: WINDOW_W,
+      }}
+    >
       <TouchableOpacity
-        id="h-14 aspect-square rounded-full overflow-hidden"
+        style={{
+          height: 60,
+          aspectRatio: "1/1",
+          borderRadius: 1000,
+          overflow: "hidden",
+        }}
+        activeOpacity={0.7}
+        touchSoundDisabled={true}
         onPress={() => {
           console.log("abrir avatar");
         }}
       >
         <Image
-          id="h-full w-full"
+          style={{ height: 60, aspectRatio: "1/1" }}
           source={
             chat?.to.photo
               ? { uri: chat?.to.photo }
@@ -23,35 +40,64 @@ export function ChatListItem({ chat }: { chat: any }) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        id="w-5/6 pl-3"
+        style={{
+          width: WINDOW_W - 60 - SPACE * 2,
+          paddingHorizontal: SPACE * 2,
+          gap: 3,
+        }}
+        activeOpacity={0.75}
+        touchSoundDisabled={true}
         onPress={() => {
-          router.navigate(`/chat/${chat?.id}?data=${JSON.stringify(chat)}`);
+          router.navigate(`/chat/${chat?.id}`);
         }}
       >
         {/* name and time */}
-        <View id="flex flex-row items-center justify-between w-full">
-          <Text id="text-lg" style={{ color: COLORS.light.text }}>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.light.text,
+              fontWeight: "600",
+              fontSize: 15,
+            }}
+          >
             {chat?.to.name}
           </Text>
 
-          <Text id="text-xs" style={{ color: COLORS.light.text }}>
+          <Text style={{ color: COLORS.light.text, opacity: 0.7 }}>
             {/* {chat?.msg.time} */}
             00:00
           </Text>
         </View>
 
         {/* status and message */}
-        <View id="flex flex-row">
-          <View id="h-5 w-5 rounded-full flex justify-center items-center">
-            {/* <AntDesign name="check" size={20} color="black" /> */}
-            <Ionicons name="checkmark-done-outline" size={18} color="#6CD4FC" />
+        <View style={{ display: "flex", flexDirection: "row", gap: 3 }}>
+          <View>
+            <Ionicons
+              name="checkmark-done-outline"
+              size={20}
+              style={{
+                color: COLORS.turquese1,
+              }}
+            />
           </View>
-          <View id="w-11/12 truncate">
+          <View
+            style={{
+              width: WINDOW_W - 130,
+              overflow: "hidden",
+            }}
+          >
             <Text
-              id="opacity-75"
               numberOfLines={1}
               ellipsizeMode="tail"
-              style={{ color: COLORS.light.text }}
+              style={{ color: COLORS.light.text, opacity: 0.75 }}
             >
               {chat?.msg.body}
             </Text>
