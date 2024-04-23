@@ -81,7 +81,8 @@ export default function HeaderChat({ chat }: { chat: any }) {
           <Text
             style={{
               color: COLORS.light.text,
-              fontWeight: "bold",
+              fontWeight: "500",
+              fontSize: 18,
             }}
           >
             {chat.to?.name && chat.to?.name}
@@ -96,7 +97,7 @@ export default function HeaderChat({ chat }: { chat: any }) {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          gap: 15,
+          gap: 20,
         }}
       >
         <TouchableOpacity
