@@ -1,26 +1,41 @@
-// https://www.color-hex.com/color-palette/110833
-// https://www.color-hex.com/color-palette/113854
-// https://www.color-hex.com/color
-// https://coolors.co/palettes/whatsapp
+const green1 = "#e7ffdb";
+const green2 = "#17a85c";
+const green3 = "#115d3b";
 
-const greenlight = "#128c7e";
-const greenDark = "#073b4c";
+const black1 = "#252e33";
+const black2 = "#0f191f";
+
+const white = "#ffffff";
+
+const turquese1 = "#009ae1";
 
 export const COLORS = {
   light: {
-    text: "#111",
-    background: "#ffffff",
-    headerBgColor: greenlight,
-    mainBgColor: "#ffffff",
-    footerBgColor: "#ffffff",
-    footerText: "#111",
+    text: black2,
+    background: white,
+    headerBgColor: white,
+    mainBgColor: white,
+    footerBgColor: white,
+    footerText: black2,
+    tabBarFocused: green1,
+    tabBarIconFocused: green3,
+    tabBarIconNoFocused: black1,
+    whatassAppOnHeader: green2,
+    tabBarActiveTintColor: black2,
+    tabBarInactiveTintColor: "#666666",
   },
   dark: {
-    text: "#ffffff",
-    background: "#111",
-    headerBgColor: greenDark,
-    mainBgColor: "#09201F",
-    footerBgColor: greenDark,
-    footerText: "#fff",
+    text: white,
+    background: black2,
+    headerBgColor: green3,
+    mainBgColor: black2,
+    footerBgColor: green3,
+    footerText: white,
+    tabBarFocused: green3,
+    tabBarIconFocused: green1,
+    tabBarIconNoFocused: white,
+    whatassAppOnHeader: white,
+    tabBarActiveTintColor: white,
+    tabBarInactiveTintColor: "#666666",
   },
 };
